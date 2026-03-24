@@ -1,0 +1,26 @@
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="SauceSuite" parallel="tests" thread-count="2">
+
+ <listeners>
+  <listener class-name="utils.TestListener"/>
+ </listeners>
+
+ <test name="SauceTest">
+
+  <groups>
+   <run>
+    <include name="smoke"/>
+    <include name="sanity"/>
+    <include name="regression"/>
+   </run>
+  </groups>
+
+  <classes>
+   <class name="runner.TestRunner"/>
+  </classes>
+
+ </test>
+
+</suite>
